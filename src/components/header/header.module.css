@@ -18,6 +18,12 @@
                 font-size: 20px;
             }
         }
+
+        .header__top__account {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
     }
 
     .header__bottom {

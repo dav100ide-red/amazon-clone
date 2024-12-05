@@ -2,6 +2,9 @@ import Link from "next/link";
 import style from "./header.module.css";
 import Image from "next/image";
 import { CiLocationOn } from "react-icons/ci";
+import { BsCart } from "react-icons/bs";
+
+import SearchBar from "./search-bar/search-bar";
 
 export default function Header() {
     return (
@@ -17,6 +20,11 @@ export default function Header() {
                         <br />
                         <span className="fw-700">Update locations</span>
                     </div>
+                </div>
+                <SearchBar />
+                <div className={`${style.header__top__account} hover-border`}>
+                    <small>Hello, sign in</small>
+                    <div className="fw-700">Account</div>
                 </div>
             </div>
             <div className={style.header__bottom}>happy :-)</div>

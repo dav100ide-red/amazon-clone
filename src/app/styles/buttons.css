@@ -7,3 +7,13 @@
     line-height: 19px;
     font-size: 13px;
 }
+
+.btn-accent {
+    color: var(--primary);
+    padding: 7px 10px;
+    background-color: var(--accent-300);
+    border-radius: var(--border-radius);
+    &:hover {
+        background-color: var(--accent);
+    }
+}
