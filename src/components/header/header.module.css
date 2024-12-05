@@ -4,9 +4,24 @@
     margin-bottom: 95vh; /* temp for dev ui*/
     .header__top {
         background-color: var(--primary);
+        /* height: 60px; */
+        padding: 4px 10px;
+        display: flex;
+        flex-flow: nowrap row;
+        align-items: stretch;
+        gap: 6px;
+        .header__top__delivery {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            .locationIcon {
+                font-size: 20px;
+            }
+        }
     }
 
     .header__bottom {
         background-color: var(--primary-300);
+        height: 39px;
     }
 }
