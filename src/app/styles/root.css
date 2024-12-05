@@ -1,2 +1,13 @@
 :root {
+    --primary-100: #485769;
+    --primary-200: #37475a;
+    --primary-300: #232f3e;
+    --primary: #0f1111;
+
+    --accent-300: #f3a847;
+    --accent: #ff9900;
+
+    --secondary: #146eb4;
+
+    --white: #fff;
 }
