@@ -3,7 +3,6 @@
     padding-block: 15px;
     background-color: var(--primary-200);
     width: 100%;
-    color: var(--white);
     &:hover {
         background-color: var(--primary-100);
     }

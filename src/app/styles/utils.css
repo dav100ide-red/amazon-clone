@@ -1,0 +1,50 @@
+/* Utils for background colors */
+.bg-primary-100 {
+    background-color: var(--primary-100);
+}
+.bg-primary-200 {
+    background-color: var(--primary-200);
+}
+.bg-primary-300 {
+    background-color: var(--primary-300);
+}
+.bg-primary {
+    background-color: var(--primary);
+}
+.bg-accent-300 {
+    background-color: var(--accent-300);
+}
+.bg-accent {
+    background-color: var(--accent);
+}
+.bg-secondary {
+    background-color: var(--secondary);
+}
+.bg-white {
+    background-color: var(--white);
+}
+
+.text-primary-100 {
+    color: var(--primary-100);
+}
+.text-primary-200 {
+    color: var(--primary-200);
+}
+.text-primary-300 {
+    color: var(--primary-300);
+}
+.text-primary {
+    color: var(--primary);
+}
+.text-accent-300 {
+    color: var(--accent-300);
+}
+.text-accent {
+    color: var(--accent);
+}
+.text-secondary {
+    color: var(--secondary);
+}
+.text-white {
+    color: var(--white);
+}
