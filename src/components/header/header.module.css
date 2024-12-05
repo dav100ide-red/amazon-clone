@@ -1,4 +1,12 @@
 .header {
     background-color: var(--primary);
     color: var(--white);
+    margin-bottom: 95vh; /* temp for dev ui*/
+    .header__top {
+        background-color: var(--primary);
+    }
+
+    .header__bottom {
+        background-color: var(--primary-300);
+    }
 }

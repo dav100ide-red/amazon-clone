@@ -35,7 +35,7 @@
         }
 
         .footer_links a {
-            color: #dddddd;
+            color: var(--gray-100);
             text-decoration: none;
             margin: 5px 10px;
         }
@@ -49,7 +49,7 @@
         }
 
         .footer_copywright p {
-            color: #dddddd;
+            color: var(--gray-100);
         }
     }
 }
