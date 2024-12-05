@@ -32,7 +32,7 @@ export default function Header() {
                     <span className="text-accent fw-700">6</span>
                 </Link>
             </div>
-            <div className={style.header__bottom}>happy :-)</div>
+            <div className={style.header__bottom}>todo: header bottom</div>
         </header>
     );
 }
