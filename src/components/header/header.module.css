@@ -1,7 +1,7 @@
 .header {
     background-color: var(--primary);
     color: var(--white);
-    margin-bottom: 95vh; /* temp for dev ui*/
+
     .header__top {
         background-color: var(--primary);
         /* height: 60px; */
@@ -9,7 +9,7 @@
         display: flex;
         flex-flow: nowrap row;
         align-items: stretch;
-        gap: 6px;
+        gap: 8px;
         .header__top__delivery {
             display: flex;
             align-items: center;
@@ -23,6 +23,16 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
+        }
+
+        .header__top__cart {
+            display: flex;
+            align-items: center;
+            position: relative;
+            span {
+                position: absolute;
+                left: 43%;
+            }
         }
     }
 

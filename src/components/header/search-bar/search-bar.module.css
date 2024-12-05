@@ -3,16 +3,37 @@
     display: flex;
     align-items: center;
     flex-grow: 1;
-    input,
-    select {
-        padding: 7px 10px;
-        height: 44px;
-        border: none;
-    }
-    input {
+    .searchBarContent {
+        display: flex;
+        align-items: center;
         flex-grow: 1;
-        border-top-left-radius: var(--border-radius);
-        border-bottom-left-radius: var(--border-radius);
+        border: 2px solid transparent;
+        border-radius: var(--border-radius);
+        &:focus-within {
+            border-color: var(--accent);
+        }
+        input,
+        select {
+            padding: 7px 10px;
+            height: 43px;
+            border: none;
+            outline: none;
+        }
+        input {
+            flex-grow: 1;
+            font-size: 15px;
+        }
+        select {
+            border-top-left-radius: var(--border-radius);
+            border-bottom-left-radius: var(--border-radius);
+            border: 2px solid transparent;
+            &:hover {
+                background-color: var(--gray-100);
+            }
+            &:active {
+                border-color: var(--accent);
+            }
+        }
     }
     button {
         border-top-left-radius: 0;

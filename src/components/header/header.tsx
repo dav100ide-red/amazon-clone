@@ -22,10 +22,15 @@ export default function Header() {
                     </div>
                 </div>
                 <SearchBar />
+
                 <div className={`${style.header__top__account} hover-border`}>
                     <small>Hello, sign in</small>
                     <div className="fw-700">Account</div>
                 </div>
+                <Link className={`${style.header__top__cart} hover-border`} href="/cart">
+                    <BsCart size={40} color="var(--white)" />
+                    <span className="text-accent fw-700">6</span>
+                </Link>
             </div>
             <div className={style.header__bottom}>happy :-)</div>
         </header>
