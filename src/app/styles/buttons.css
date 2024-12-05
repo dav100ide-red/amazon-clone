@@ -1,0 +1,9 @@
+/*! impostare buttons.css come foglio di stile del componenete <Btn/> quando esisterà  */
+
+.btn {
+    all: unset;
+    text-align: center;
+    cursor: pointer;
+    line-height: 19px;
+    font-size: 13px;
+}
