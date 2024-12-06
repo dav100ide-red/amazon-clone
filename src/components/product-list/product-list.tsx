@@ -6,9 +6,14 @@ export default async function ProductList() {
     const products: Product[] = await res.json();
     return (
         <>
+            {/* <Provider store={store}> */}
             {products.map((p: Product, _) => (
-                <div key={_}>{p.name}</div>
+                <div style={{ textAlign: "center", fontSize: "3rem" }} key={_}>
+                    {p.name}
+                </div>
             ))}
+
+            {/* </Provider> */}
         </>
     );
 }
