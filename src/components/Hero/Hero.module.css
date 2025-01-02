@@ -1,0 +1,21 @@
+.heroContainer {
+    position: relative;
+    overflow: hidden;
+    .carousel {
+        img {
+            object-fit: cover;
+            max-height: 300px;
+            object-position: top;
+        }
+    }
+}
+
+.heroGradient {
+    width: 100%;
+    height: 10rem;
+    background: linear-gradient(to top, #f3f4f6, transparent);
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+}

@@ -3,6 +3,7 @@ import "./index.css";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import localFont from "next/font/local";
+import ClientProvider from "@/components/ClientProvider";
 
 export const metadata: Metadata = {
     title: "Amazon clone",
@@ -29,7 +30,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={amazonEmber.className}>
                 <Header />
-                {children}
+                <ClientProvider>{children}</ClientProvider>
                 <Footer />
             </body>
         </html>
