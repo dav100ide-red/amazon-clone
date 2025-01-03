@@ -1,6 +1,7 @@
 import { IoIosSearch } from "react-icons/io";
 
 import style from "./search-bar.module.css";
+import { ALL_PRODUCT_CATEGORIES } from "@/constants/allProductCategories";
 
 export default function SearchBar() {
     return (
@@ -8,8 +9,11 @@ export default function SearchBar() {
             <div className={style.searchBarContent}>
                 <select>
                     <option value="0">all</option>
-                    <option value="1">computer</option>
-                    <option value="2">Fitness</option>
+                    {ALL_PRODUCT_CATEGORIES.map((category) => (
+                        <option key={category} value={category}>
+                            {category}
+                        </option>
+                    ))}
                 </select>
                 <input type="text" placeholder="Search Amazon.it" />
                 <button type="submit" className={`btn btn-accent`}>

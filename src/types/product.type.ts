@@ -1,4 +1,6 @@
-type ProductCategory = "electronics" | "fitness" | "clothing";
+import { ALL_PRODUCT_CATEGORIES } from "@/constants/allProductCategories";
+
+export type ProductCategory = (typeof ALL_PRODUCT_CATEGORIES)[number];
 
 export type Product = {
     name: string;
