@@ -1,6 +1,5 @@
 import { Product } from "@/types/product.type";
 import style from "./product-card.module.css";
-import sliderImg_2 from "@/assets/images/slider/sliderImg_2.jpg";
 import Image from "next/image";
 
 type ProductCardProps = {
@@ -8,13 +7,13 @@ type ProductCardProps = {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-    const { name, price } = product;
+    const { name, price, imgSrc } = product;
 
     return (
         <div className={style.productCard}>
             <h2 className={style.productTitle}>{name}</h2>
             <div className={style.productImg}>
-                <Image src={sliderImg_2} alt="sliderImg" fill style={{ objectFit: "cover" }} />
+                <Image src={imgSrc} alt={name} fill style={{ objectFit: "cover" }} />
             </div>
 
             <div className={style.productPrice}>€{price}</div>
