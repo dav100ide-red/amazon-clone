@@ -10,6 +10,6 @@ export async function GET() {
         { name: "air pods", price: 160, category: "electronic" },
     ]);
 
-    const slowData = await wait(jsonData, 2500);
+    const slowData = await wait(jsonData, 0);
     return slowData;
 }

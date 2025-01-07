@@ -1,7 +1,18 @@
+.pageTitle {
+    margin-bottom: 20px;
+    h1 {
+        margin-bottom: 0.6rem;
+    }
+    p {
+        font-size: 14px;
+        color: rgb(86, 89, 89);
+    }
+}
+
 .productList {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 16px;
+    gap: 14px;
 }
 
 @media (min-width: 1200px) {

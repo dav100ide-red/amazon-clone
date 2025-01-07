@@ -21,10 +21,19 @@ export default function ProductList() {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <div className={style.productList}>
-            {products.map((p: Product, _) => (
-                <ProductCard product={p} key={_} />
-            ))}
-        </div>
+        <>
+            <div className={style.pageTitle}>
+                <h1>Explore our products</h1>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi atque aperiam ab quam beatae.
+                    Dicta
+                </p>
+            </div>
+            <div className={style.productList}>
+                {products.map((p: Product, _) => (
+                    <ProductCard product={p} key={_} />
+                ))}
+            </div>
+        </>
     );
 }
