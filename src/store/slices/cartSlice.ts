@@ -8,24 +8,7 @@ type CartState = {
     items: CartItem[];
 };
 const initialState: CartState = {
-    items: [
-        {
-            id: 10,
-            name: "Keyboard",
-            price: 80,
-            category: "gaming",
-            imgSrc: "https://placehold.co/150x150/ADD8E6/000000.png?text=Keyboard",
-            quantity: 2,
-        },
-        {
-            id: 92,
-            name: "Protein",
-            price: 35.99,
-            category: "fitness",
-            imgSrc: "https://placehold.co/150x150/ADD8E6/000000.png?text=Protein",
-            quantity: 1,
-        },
-    ],
+    items: [],
 };
 
 const cartSlice = createSlice({

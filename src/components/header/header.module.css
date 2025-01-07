@@ -3,8 +3,12 @@
     color: var(--white);
 
     .header__top {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 9999;
         background-color: var(--primary);
-        /* height: 60px; */
         padding: 4px 10px;
         display: flex;
         flex-flow: nowrap row;
@@ -39,5 +43,6 @@
     .header__bottom {
         background-color: var(--primary-300);
         height: 39px;
+        margin-top: 71.5px;
     }
 }
