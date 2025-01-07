@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import style from "./header.module.css";
 import Image from "next/image";
@@ -5,8 +6,11 @@ import { CiLocationOn } from "react-icons/ci";
 import { BsCart } from "react-icons/bs";
 
 import SearchBar from "./search-bar/search-bar";
+import { useAppSelector } from "@/store/hooks";
+import { cartSelectors } from "@/store/slices/cartSlice";
 
 export default function Header() {
+    const totalItemsQntity = useAppSelector(cartSelectors.getTotatlItemsQntity);
     return (
         <header className={style.header}>
             <div className={style.header__top}>
@@ -29,7 +33,7 @@ export default function Header() {
                 </div>
                 <Link className={`${style.header__top__cart} hover-border`} href="/cart">
                     <BsCart size={40} color="var(--white)" />
-                    <span className="text-accent fw-700">6</span>
+                    <span className="text-accent fw-700">{totalItemsQntity}</span>
                 </Link>
             </div>
             <div className={style.header__bottom}>todo: header bottom</div>

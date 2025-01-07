@@ -12,7 +12,7 @@
 .productList {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 14px;
+    gap: 20px;
 }
 
 @media (min-width: 1200px) {
