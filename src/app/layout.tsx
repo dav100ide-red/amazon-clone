@@ -30,6 +30,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={amazonEmber.className}>
                 <Header />
+
                 <ClientProvider>{children}</ClientProvider>
                 <Footer />
             </body>
