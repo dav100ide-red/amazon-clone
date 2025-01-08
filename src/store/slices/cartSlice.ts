@@ -10,20 +10,20 @@ type CartState = {
 const initialState: CartState = {
     items: [
         {
-            quantity: 2,
-            id: 3,
-            name: "Treadmill",
-            price: 1200,
-            category: "fitness",
-            imgSrc: "https://webapi-prod.technogym.com/dw/image/v2/BFLQ_PRD/on/demandware.static/-/Sites-tg-catalog-master/default/dwfa987005/product/DCKA/technogym_myrun_gallery_001.jpg?sw=1840&sh=1380",
-        },
-        {
             quantity: 1,
             id: 4,
             name: "Running Shoes",
             price: 100,
             category: "fitness",
             imgSrc: "https://trere-uyn.b-cdn.net/products/images/ecomm_SX4_Y100311_A140_front.jpg-1200x1200.jpeg",
+        },
+        {
+            quantity: 5,
+            id: 13,
+            name: "Yoga Mat",
+            price: 40,
+            category: "fitness",
+            imgSrc: "https://placehold.co/150x150/98FB98/000000.png?text=Yoga+Mat",
         },
     ],
 };
@@ -68,16 +68,20 @@ const getTotatlItemsQntity = (state: RootState) =>
 const getItemById = (state: RootState, id: number): CartItem | undefined =>
     state[CART_SLICE_NAME].items.find((item) => item.id === id);
 
-const getTotalPriceByQuantity = (state: RootState, id: number) => {
+const getTotalPriceById = (state: RootState, id: number) => {
     const item = cartSelectors.getItemById(state, id);
     return item ? item.price * item.quantity : undefined;
 };
+
+const getCartTotalPrice = (state: RootState) =>
+    state[CART_SLICE_NAME].items.reduce((acc, item) => acc + item.quantity * item.price, 0);
 
 export const cartSelectors = {
     getItems,
     getTotatlItemsQntity,
     getItemById,
-    getTotalPriceByQuantity,
+    getTotalPriceById,
+    getCartTotalPrice,
 };
 
 // export const cartActions = cartSlice.actions;

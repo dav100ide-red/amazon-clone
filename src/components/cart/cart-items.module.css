@@ -1,7 +1,7 @@
 .cartItems {
     background-color: var(--white);
     padding: 20px;
-    .header {
+    .cartItems__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -11,5 +11,10 @@
             color: rgb(86, 89, 89);
             align-self: flex-end;
         }
+    }
+    .cartItems__footer {
+        font-size: 18px;
+        text-align: right;
+        padding-block: 0.8rem;
     }
 }

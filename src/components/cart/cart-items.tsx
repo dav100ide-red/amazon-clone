@@ -6,10 +6,12 @@ import CartItem from "./cart-item";
 
 const CartItems = () => {
     const items = useAppSelector(cartSelectors.getItems);
+    const totalItemsQntity = useAppSelector(cartSelectors.getTotatlItemsQntity);
+    const cartTotalPrice = useAppSelector(cartSelectors.getCartTotalPrice);
 
     return (
         <div className={style.cartItems}>
-            <div className={style.header}>
+            <div className={style.cartItems__header}>
                 <h2>Shopping Cart</h2>
                 <small>Price</small>
             </div>
@@ -19,6 +21,9 @@ const CartItems = () => {
                       //passare solo l'id, <CartItem/> pesca tramite un selector l'item interessato
                       return <CartItem key={_} itemId={item.id} />;
                   })}
+            <div className={style.cartItems__footer}>
+                Subtotal ({totalItemsQntity} items): <strong>€{cartTotalPrice}</strong>
+            </div>
         </div>
     );
 };

@@ -11,7 +11,7 @@ export type CartItemProps = {
 
 const CartItem: React.FC<CartItemProps> = ({ itemId }) => {
     const item = useAppSelector((state: RootState) => cartSelectors.getItemById(state, itemId));
-    const totalPrice = useAppSelector((state: RootState) => cartSelectors.getTotalPriceByQuantity(state, itemId));
+    const totalPrice = useAppSelector((state: RootState) => cartSelectors.getTotalPriceById(state, itemId));
     const dispatch = useAppDispatch();
 
     if (!item) {
