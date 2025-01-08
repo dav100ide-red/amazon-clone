@@ -16,7 +16,8 @@ const CartItems = () => {
             {items.length <= 0
                 ? "Empty Cart..."
                 : items.map((item, _) => {
-                      return <CartItem key={_} item={item} />;
+                      //passare solo l'id, <CartItem/> pesca tramite un selector l'item interessato
+                      return <CartItem key={_} itemId={item.id} />;
                   })}
         </div>
     );

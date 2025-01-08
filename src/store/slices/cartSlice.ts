@@ -8,7 +8,24 @@ type CartState = {
     items: CartItem[];
 };
 const initialState: CartState = {
-    items: [],
+    items: [
+        {
+            quantity: 2,
+            id: 3,
+            name: "Treadmill",
+            price: 1200,
+            category: "fitness",
+            imgSrc: "https://webapi-prod.technogym.com/dw/image/v2/BFLQ_PRD/on/demandware.static/-/Sites-tg-catalog-master/default/dwfa987005/product/DCKA/technogym_myrun_gallery_001.jpg?sw=1840&sh=1380",
+        },
+        {
+            quantity: 1,
+            id: 4,
+            name: "Running Shoes",
+            price: 100,
+            category: "fitness",
+            imgSrc: "https://trere-uyn.b-cdn.net/products/images/ecomm_SX4_Y100311_A140_front.jpg-1200x1200.jpeg",
+        },
+    ],
 };
 
 const cartSlice = createSlice({
@@ -30,9 +47,24 @@ const getItems = (state: RootState) => state[CART_SLICE_NAME].items;
 const getTotatlItemsQntity = (state: RootState) =>
     state[CART_SLICE_NAME].items.reduce((acc, item: CartItem) => acc + item.quantity, 0);
 
+const getItemById = (state: RootState, id: number) => {
+    const foundItem: CartItem | undefined = state[CART_SLICE_NAME].items.find((item) => item.id === id);
+    if (!foundItem) {
+        console.warn(`Invalid Cart Item ID: ${id}`);
+    }
+    return foundItem;
+};
+
+const getTotalPriceByQuantity = (state: RootState, id: number) => {
+    const item = cartSelectors.getItemById(state, id);
+    return item ? item.price * item.quantity : undefined;
+};
+
 export const cartSelectors = {
     getItems,
     getTotatlItemsQntity,
+    getItemById,
+    getTotalPriceByQuantity,
 };
 
 export const cartActions = cartSlice.actions;
