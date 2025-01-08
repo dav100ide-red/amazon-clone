@@ -2,7 +2,7 @@ import { CartItem } from "@/types/product.type";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-export const CART_SLICE_NAME = "cart" as const;
+const CART_SLICE_NAME = "cart" as const;
 
 type CartState = {
     items: CartItem[];
@@ -60,15 +60,13 @@ const cartSlice = createSlice({
     },
 });
 
+// ! usa createSelector che crea i selector di tipo memozoid
 const getItems = (state: RootState) => state[CART_SLICE_NAME].items;
 const getTotatlItemsQntity = (state: RootState) =>
     state[CART_SLICE_NAME].items.reduce((acc, item: CartItem) => acc + item.quantity, 0);
 
 const getItemById = (state: RootState, id: number) => {
     const foundItem: CartItem | undefined = state[CART_SLICE_NAME].items.find((item) => item.id === id);
-    if (!foundItem) {
-        console.warn(`Invalid Cart Item ID: ${id}`);
-    }
     return foundItem;
 };
 
@@ -84,6 +82,7 @@ export const cartSelectors = {
     getTotalPriceByQuantity,
 };
 
-export const cartActions = cartSlice.actions;
+// export const cartActions = cartSlice.actions;
+export const { name, actions: cartActions } = cartSlice;
 
 export default cartSlice.reducer;

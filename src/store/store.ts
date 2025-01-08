@@ -1,6 +1,6 @@
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
-import homepageSlice, { HOMEPAGE_SLICE_NAME as HOMEPAGE } from "./slices/homepageSlice";
-import cartSlice, { CART_SLICE_NAME as CART } from "./slices/cartSlice";
+import homepageSlice, { name as HOMEPAGE } from "./slices/homepageSlice";
+import cartSlice, { name as CART } from "./slices/cartSlice";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./rootSaga";
 

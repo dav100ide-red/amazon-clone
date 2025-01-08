@@ -1,6 +1,6 @@
 import { Product } from "@/types/product.type";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-export const HOMEPAGE_SLICE_NAME = "homepage" as const;
+const HOMEPAGE_SLICE_NAME = "homepage" as const;
 
 type HomepageState = {
     products: Product[];
@@ -32,6 +32,7 @@ const homepageSlice = createSlice({
     },
 });
 
-export const homepageActions = homepageSlice.actions;
+// export const homepageActions = homepageSlice.actions;
+export const { name, actions: homepageActions } = homepageSlice;
 
 export default homepageSlice.reducer;
