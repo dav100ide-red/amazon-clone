@@ -65,10 +65,8 @@ const getItems = (state: RootState) => state[CART_SLICE_NAME].items;
 const getTotatlItemsQntity = (state: RootState) =>
     state[CART_SLICE_NAME].items.reduce((acc, item: CartItem) => acc + item.quantity, 0);
 
-const getItemById = (state: RootState, id: number) => {
-    const foundItem: CartItem | undefined = state[CART_SLICE_NAME].items.find((item) => item.id === id);
-    return foundItem;
-};
+const getItemById = (state: RootState, id: number): CartItem | undefined =>
+    state[CART_SLICE_NAME].items.find((item) => item.id === id);
 
 const getTotalPriceByQuantity = (state: RootState, id: number) => {
     const item = cartSelectors.getItemById(state, id);
