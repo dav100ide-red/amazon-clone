@@ -33,12 +33,29 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart(state, action: PayloadAction<CartItem>) {
-            const existingItem: CartItem | null = state.items.find((item) => item.id === action.payload.id) ?? null;
-            if (existingItem) {
-                existingItem.quantity += action.payload.quantity;
+            const item: CartItem | null = state.items.find((item) => item.id === action.payload.id) ?? null;
+            if (item) {
+                item.quantity = action.payload.quantity;
                 return;
             }
             state.items.push(action.payload);
+        },
+        setItemQntity(state, action: PayloadAction<CartItem>) {
+            const item: CartItem | null = state.items.find((item) => item.id === action.payload.id) ?? null;
+            if (!item) {
+                console.warn(`No item :( in setItemQntity reducer`);
+                return;
+            }
+            item.quantity = action.payload.quantity;
+        },
+        removeItemFromCart(state, action: PayloadAction<CartItem>) {
+            const item: CartItem | null = state.items.find((item) => item.id === action.payload.id) ?? null;
+            if (!item) {
+                console.warn(`No item :( in removeItemFromCart reducer`);
+                return;
+            }
+            const newItems = state.items.filter((item) => item.id !== action.payload.id);
+            state.items = newItems;
         },
     },
 });

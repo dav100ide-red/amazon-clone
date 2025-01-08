@@ -1,8 +1,9 @@
-import { useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import style from "./cart-item.module.css";
-import { cartSelectors } from "@/store/slices/cartSlice";
+import { cartActions, cartSelectors } from "@/store/slices/cartSlice";
 import { RootState } from "@/store/store";
 import Image from "next/image";
+import QuantitySelector from "../QuantitySelector/QuantitySelector";
 
 export type CartItemProps = {
     itemId: number;
@@ -11,10 +12,25 @@ export type CartItemProps = {
 const CartItem: React.FC<CartItemProps> = ({ itemId }) => {
     const item = useAppSelector((state: RootState) => cartSelectors.getItemById(state, itemId));
     const totalPrice = useAppSelector((state: RootState) => cartSelectors.getTotalPriceByQuantity(state, itemId));
+    const dispatch = useAppDispatch();
+
     if (!item) {
         return `No Item with the following Id: ${itemId}`;
     }
-    const { name, imgSrc } = item;
+    const { name, imgSrc, quantity } = item;
+
+    const dispatchRemoveItem = () => {
+        dispatch(cartActions.removeItemFromCart(item));
+    };
+
+    const handleQntityChange = (newQntity: number) => {
+        if (newQntity > 0) {
+            const itemWithNewQntity = { ...item, quantity: newQntity };
+            dispatch(cartActions.setItemQntity(itemWithNewQntity));
+            return;
+        }
+        dispatchRemoveItem();
+    };
 
     return (
         <div className={style.cartItem}>
@@ -25,6 +41,10 @@ const CartItem: React.FC<CartItemProps> = ({ itemId }) => {
                 <div className={style.cartItem__content__top}>
                     <h3 className={`fw-400`}>{name}</h3>
                     <h5>€{totalPrice}</h5>
+                </div>
+                <div className={style.cartItem__content__bottom}>
+                    <QuantitySelector quantity={quantity} onChange={handleQntityChange} />|
+                    <button onClick={dispatchRemoveItem}>Delete</button>
                 </div>
             </div>
         </div>
