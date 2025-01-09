@@ -1,3 +1,15 @@
 .quantitySelector {
-    color: thistle;
+    border: 2px solid var(--accent-300);
+    border-radius: 100vmax;
+    font-size: 14px;
+    padding: 0rem 0.5rem;
+
+    & button,
+    .quantitySelector__value {
+        line-height: 25px;
+    }
+    .quantitySelector__value {
+        padding-inline: 1rem;
+        vertical-align: sub;
+    }
 }

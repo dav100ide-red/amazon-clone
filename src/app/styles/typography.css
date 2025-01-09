@@ -41,3 +41,7 @@ h6 {
 .fst-normal {
     font-style: normal !important;
 }
+
+.icon {
+    vertical-align: middle;
+}
