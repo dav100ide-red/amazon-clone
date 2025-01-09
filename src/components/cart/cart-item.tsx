@@ -43,8 +43,12 @@ const CartItem: React.FC<CartItemProps> = ({ itemId }) => {
                     <h5>€{totalPrice}</h5>
                 </div>
                 <div className={style.cartItem__content__bottom}>
-                    <QuantitySelector quantity={quantity} onChange={handleQntityChange} />|
-                    <button onClick={dispatchRemoveItem}>Delete</button>
+                    <QuantitySelector quantity={quantity} onChange={handleQntityChange} />
+                    <button onClick={dispatchRemoveItem} className="btn btn-link">
+                        Delete
+                    </button>
+                    <span className="text-primary-100">|</span>
+                    <button className="btn btn-link">Save for later</button>
                 </div>
             </div>
         </div>

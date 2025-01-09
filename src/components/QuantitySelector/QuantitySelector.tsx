@@ -15,11 +15,11 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({ quantity, onChange 
     return (
         <div className={style.quantitySelector}>
             <button className="btn" onClick={() => emitNewQntity(quantity - 1)}>
-                {quantity === 1 ? <MdDeleteOutline /> : <FaPlus />}
+                {quantity === 1 ? <MdDeleteOutline /> : <FaMinus />}
             </button>
             <span className={style.quantitySelector__value}>{quantity}</span>
             <button className="btn" onClick={() => emitNewQntity(quantity + 1)}>
-                <FaMinus />
+                <FaPlus />
             </button>
         </div>
     );
