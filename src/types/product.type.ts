@@ -11,3 +11,13 @@ export type Product = {
 };
 
 export type CartItem = Product & { quantity: number };
+
+export type ProductsFilter = {
+    name?: string;
+    category?: ProductCategory;
+};
+
+export const isValidCategory = (category: string | undefined): category is ProductCategory => {
+    if (!category) return false;
+    return (ALL_PRODUCT_CATEGORIES as readonly string[]).includes(category);
+};

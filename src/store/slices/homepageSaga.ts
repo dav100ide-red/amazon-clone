@@ -5,9 +5,9 @@ import { Product } from "@/types/product.type";
 // Worker Saga: Handles fetching products
 function* fetchProducts() {
     try {
-        const response: Response = yield call(fetch, "/api/products");
+        const response: Response = yield call(fetch, "/api/products?name=j&category=clothing");
         if (!response.ok) {
-            put(homepageActions.fetchProductsFailure(`HTTP error! status: ${response.status}`));
+            yield put(homepageActions.fetchProductsFailure(`HTTP error! status: ${response.status}`));
             return;
         }
 
