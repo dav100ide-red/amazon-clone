@@ -14,3 +14,7 @@ ul {
 a {
     cursor: pointer;
 }
+
+body {
+    background-color: var(--gray-200);
+}

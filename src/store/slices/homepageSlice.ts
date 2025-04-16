@@ -1,6 +1,6 @@
-import { Product } from "@/types/product.type";
+import { Product, ProductsFilter } from "@/types/product.type";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-export const HOMEPAGE_SLICE_NAME = "homepage" as const;
+const HOMEPAGE_SLICE_NAME = "homepage" as const;
 
 type HomepageState = {
     products: Product[];
@@ -21,17 +21,22 @@ const homepageSlice = createSlice({
             state.loading = true;
             state.error = null;
         },
-        fetchProductsSuccess: (state, action: PayloadAction<Product[]>) => {
+        searchProductsStart: (state, action: PayloadAction<ProductsFilter>) => {
+            state.loading = true;
+            state.error = null;
+        },
+        loadProductsSuccess: (state, action: PayloadAction<Product[]>) => {
             state.products = action.payload;
             state.loading = false;
         },
-        fetchProductsFailure: (state, action: PayloadAction<string>) => {
+        loadProductsFailed: (state, action: PayloadAction<string>) => {
             state.error = action.payload;
             state.loading = false;
         },
     },
 });
 
-export const homepageActions = homepageSlice.actions;
+// export const homepageActions = homepageSlice.actions;
+export const { name, actions: homepageActions } = homepageSlice;
 
 export default homepageSlice.reducer;

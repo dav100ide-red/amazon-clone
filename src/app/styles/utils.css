@@ -23,6 +23,9 @@
 .bg-white {
     background-color: var(--white);
 }
+.bg-gray-200 {
+    background-color: var(--gray-200);
+}
 
 .text-primary-100 {
     color: var(--primary-100);

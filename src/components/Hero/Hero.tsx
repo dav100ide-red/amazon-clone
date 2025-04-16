@@ -13,13 +13,13 @@ const Hero = () => {
     return (
         <div className={style.heroContainer}>
             <Carousel
-                autoPlay
-                infiniteLoop
+                autoPlay={true}
+                infiniteLoop={true}
                 showStatus={false}
                 showIndicators={false}
                 showArrows={true}
                 showThumbs={false}
-                interval={3000}
+                interval={2500}
                 className={style.carousel}>
                 <Image priority src={sliderImg_1} alt="sliderImg" />
 

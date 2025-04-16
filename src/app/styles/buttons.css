@@ -17,3 +17,14 @@
         background-color: var(--accent);
     }
 }
+
+.btn-pill {
+    border-radius: 100vmax;
+}
+
+.btn-link {
+    color: var(--secondary);
+    &:hover {
+        text-decoration: underline;
+    }
+}
